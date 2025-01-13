@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    user-select: none;
+    position: sticky;
+    padding: 20px 0 10px;
+    top: 0;
+    background-color: #ffff;
+}
+.wrapper {
+    width: 100vw;
+    margin: 0 auto;
+}
+.name-app {
+    width: fit-content;
+    margin: 0 auto 8px;
+    font-size: 36px;
+}
+.control-area {
+    display: flex;
+    width: 96vw;
+    justify-content: space-between;
+    margin: 0 auto 24px;
+}
+.control-area div {
+    height: 34px;
+}
+.control-area img {
+    width: 26px;
+    height: 26px;
+    padding: 4px;
+}
+.input-area {
+    width: 92%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+#input-word {
+    width: 80%;
+    outline: none;
+    border: 1px solid rgb(26, 255, 0);
+    border-radius: 2px;
+    padding: 0 10px;
+    height: 40px;
+}
+.add-button {
+    display: flex;
+    padding: 2px 6px;
+    align-items: center;
+    border-radius: 4px;
+}
+.add-button img {
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+}
+.list-area {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 90%;
+}
+.tag_button img {
+    width: 18px;
+    height: 18px;
+    padding: 4px;
+}
+.content {
+    flex-grow: 1;
+    max-width: 280px;
+    max-height: 26px;
+    font-size: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+.setting-buttons {
+    display: flex;
+    width: 58px;
+    height: 24px;
+    justify-content: space-between;
+    align-content: center;
+}
+.tags {
+    display: flex;
+    height: 24px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+

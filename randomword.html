@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="randomword.css">
+    <link rel="shortcut icon" href="./Icons/dice.png" type="image/x-icon">
+    <title>Random Word</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1 class="name-app">Random Words</h1>
+            <div class="control-area">
+                <div id="clear-list">
+                    <img src="./Icons/broom.png" id="clear-list-button" alt="Clear" srcset="">
+                </div>
+                <div id="display-list">
+                    <img src="./Icons/visible.png" id="visible-list-button" alt="Clear" srcset="">
+                </div>
+                <div id="start-random">
+                    <img src="./Icons/dice.png" id="start-random-button" alt="Start" srcset="">
+                </div>
+            </div>
+            <div class="input-area">
+                <input type="text" id="input-word" placeholder="Enter word here!" autocomplete="off">
+                <div class="add-button" id="add-button">
+                    <img src="./Icons/send.png" alt="Add" srcset="">
+                </div>  
+            </div>
+        </header>
+        <div class="list-area"></div>
+    </div>
+    <script src="./randomword.js"></script>
+</body>
+</html>
