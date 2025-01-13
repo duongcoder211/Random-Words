@@ -69,7 +69,6 @@ header {
 }
 .content {
     flex-grow: 1;
-    max-width: 280px;
     max-height: 26px;
     font-size: 22px;
     overflow: hidden;
@@ -80,6 +79,7 @@ header {
     display: flex;
     width: 58px;
     height: 24px;
+    gap: 6px;
     justify-content: space-between;
     align-content: center;
 }
