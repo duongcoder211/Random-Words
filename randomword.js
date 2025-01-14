@@ -23,9 +23,35 @@ let getLocalStorage = function () {
     tab_List = JSON.parse(localStorage.getItem(TABS_LIST));
     tabList = tab_List;
 }
+let addTab = function () {
+    id = id + 1;
+    newTab = {
+        id: id,
+        content: inputElm.value,
+    }
+    tabList.push(newTab);
+    updateLocalStorage();
+    inputElm.value = "";
+    render();
+}
+let setContent = function () {
+    tabList[index].content = inputElm.value;
+    inputElm.value = "";
+    render();
+    updateLocalStorage();
+    isEdit = !isEdit;
+}
+let addOrEditTabs = function () {
+    if (isEdit) {
+        index = Number(tabList.indexOf(currentTab));
+        inputElm.value == "" ? alert("You must enter a word!") : setContent();
+    }
+    else {
+        inputElm.value == "" ? alert("You must enter a word!") : addTab();
+    }
+}
 updateLocalStorage();
 getLocalStorage();
-
 let render = function () {
     let result = tabList.map((tab)=>{
         return `
@@ -67,33 +93,6 @@ let render = function () {
     });
 
 }
-
-let addOrEditTabs = function () {
-    if (isEdit) {
-        index = Number(tabList.indexOf(currentTab));
-        tabList[index].content = inputElm.value;
-        inputElm.value = "";
-        render();
-        updateLocalStorage();
-        isEdit = !isEdit;
-    }
-    else {
-        inputElm.value == "" ? alert("You must enter a word!") : addTab();
-    }
-}
-
-let addTab = function () {
-    id = id + 1;
-    newTab = {
-        id: id,
-        content: inputElm.value,
-    }
-    tabList.push(newTab);
-    updateLocalStorage();
-    inputElm.value = "";
-    render();
-}
-
 clearBtn.onclick = () => {
     tabList = [];
     inputElm.value = "";
