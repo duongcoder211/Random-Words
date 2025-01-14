@@ -27,7 +27,7 @@ let addTab = function () {
     id = id + 1;
     newTab = {
         id: id,
-        content: inputElm.value,
+        content: inputElm.value.trim(),
     }
     tabList.push(newTab);
     updateLocalStorage();
@@ -35,7 +35,7 @@ let addTab = function () {
     render();
 }
 let setContent = function () {
-    tabList[index].content = inputElm.value;
+    tabList[index].content = inputElm.value.trim();
     inputElm.value = "";
     render();
     updateLocalStorage();
@@ -44,10 +44,10 @@ let setContent = function () {
 let addOrEditTabs = function () {
     if (isEdit) {
         index = Number(tabList.indexOf(currentTab));
-        inputElm.value == "" ? alert("You must enter a word!") : setContent();
+        inputElm.value.trim() == "" ? alert("You must enter a word!") : setContent();
     }
     else {
-        inputElm.value == "" ? alert("You must enter a word!") : addTab();
+        inputElm.value.trim() == "" ? alert("You must enter a word!") : addTab();
     }
 }
 updateLocalStorage();
