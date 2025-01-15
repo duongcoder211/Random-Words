@@ -83,6 +83,7 @@ let render = function () {
     });
     deleteTabBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
+            isEdit = false;
             btn.parentElement.parentElement.remove();
             currentId = Number(btn.parentElement.parentElement.id);
             currentTab = tabList.find((tab) => (tab.id == currentId));
@@ -94,6 +95,7 @@ let render = function () {
 
 }
 clearBtn.onclick = () => {
+    isEdit = false;
     tabList = [];
     inputElm.value = "";
     updateLocalStorage();
