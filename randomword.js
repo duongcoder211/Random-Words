@@ -78,9 +78,15 @@ let render = function () {
             currentId = Number(btn.parentElement.parentElement.id);
             if(currentId == idEdit) {
                 isEdit = !isEdit;
-                currentTab = tabList.find((tab) => (tab.id == currentId));
-                inputElm.focus();
-                inputElm.value = currentTab.content;
+                if(isEdit) {
+                    currentTab = tabList.find((tab) => (tab.id == currentId));
+                    inputElm.focus();
+                    inputElm.value = currentTab.content;
+                }
+                else {
+                    inputElm.value = "";
+                }
+                
             }
             else {
                 isEdit = true;
