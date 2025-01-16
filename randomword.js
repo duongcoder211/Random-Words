@@ -8,6 +8,7 @@ let deleteTabBtns;
 let listAreaElm = document.querySelector(".list-area");
 let id = 0;
 let isEdit = false;
+let idEdit;
 let currentTab;
 let randomIndex;
 let newRandomIndex;
@@ -74,11 +75,20 @@ let render = function () {
     deleteTabBtns = document.querySelectorAll("#delete-button");
     editTabBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
-            isEdit = !isEdit;
             currentId = Number(btn.parentElement.parentElement.id);
-            currentTab = tabList.find((tab) => (tab.id == currentId));
-            inputElm.focus();
-            inputElm.value = currentTab.content;
+            if(currentId == idEdit) {
+                isEdit = !isEdit;
+                currentTab = tabList.find((tab) => (tab.id == currentId));
+                inputElm.focus();
+                inputElm.value = currentTab.content;
+            }
+            else {
+                isEdit = true;
+                currentTab = tabList.find((tab) => (tab.id == currentId));
+                inputElm.focus();
+                inputElm.value = currentTab.content;
+            }
+
         })
     });
     deleteTabBtns.forEach((btn) => {
