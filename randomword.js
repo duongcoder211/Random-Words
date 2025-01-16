@@ -88,7 +88,7 @@ let render = function () {
                 inputElm.focus();
                 inputElm.value = currentTab.content;
             }
-
+            idEdit = currentId;
         })
     });
     deleteTabBtns.forEach((btn) => {
