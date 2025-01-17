@@ -71,6 +71,7 @@ header {
     flex-grow: 1;
     max-height: 26px;
     font-size: 22px;
+    padding-left: 4px;
     overflow: hidden;
     text-overflow: ellipsis;
     margin: 0;
