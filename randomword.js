@@ -109,6 +109,7 @@ let render = function () {
     });
     deleteTabBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
+            if(isEdit) {inputElm.value = ""};
             isEdit = false;
             deActive();
             btn.parentElement.parentElement.remove();
