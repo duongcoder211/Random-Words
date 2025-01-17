@@ -51,6 +51,13 @@ let addOrEditTabs = function () {
         inputElm.value.trim() == "" ? alert("You must enter a word!") : addTab();
     }
 }
+let active = function (act) {
+    act.classList.add("active");
+}
+let deActive = function () {
+    activeElm = listAreaElm.querySelector(".active");
+    if(activeElm) activeElm.classList.remove("active");
+}
 updateLocalStorage();
 getLocalStorage();
 let render = function () {
@@ -76,10 +83,12 @@ let render = function () {
     editTabBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
             currentId = Number(btn.parentElement.parentElement.id);
+            deActive();
             if(currentId == idEdit) {
                 isEdit = !isEdit;
                 if(isEdit) {
                     currentTab = tabList.find((tab) => (tab.id == currentId));
+                    active(btn.parentElement.parentElement);
                     inputElm.focus();
                     inputElm.value = currentTab.content;
                 }
@@ -90,6 +99,7 @@ let render = function () {
             }
             else {
                 isEdit = true;
+                active(btn.parentElement.parentElement);
                 currentTab = tabList.find((tab) => (tab.id == currentId));
                 inputElm.focus();
                 inputElm.value = currentTab.content;
@@ -100,6 +110,7 @@ let render = function () {
     deleteTabBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
             isEdit = false;
+            deActive();
             btn.parentElement.parentElement.remove();
             currentId = Number(btn.parentElement.parentElement.id);
             currentTab = tabList.find((tab) => (tab.id == currentId));
