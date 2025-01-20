@@ -37,6 +37,7 @@ header {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
+    gap: 12px;
 }
 #input-word {
     width: 80%;
@@ -45,6 +46,7 @@ header {
     border-radius: 2px;
     padding: 0 10px;
     height: 40px;
+    flex-grow: 1;
 }
 .add-button {
     display: flex;
