@@ -24,11 +24,11 @@ let getLocalStorage = function () {
     tab_List = JSON.parse(localStorage.getItem(TABS_LIST));
     tabList = tab_List;
 }
-let addTab = function () {
+let addTab = function (val) {
     id = id + 1;
     newTab = {
         id: id,
-        content: inputElm.value.trim(),
+        content: val || inputElm.value.trim(),
     }
     tabList.push(newTab);
     updateLocalStorage();
@@ -48,7 +48,16 @@ let addOrEditTabs = function () {
         inputElm.value.trim() == "" ? alert("You must enter a word!") : setContent();
     }
     else {
-        inputElm.value.trim() == "" ? alert("You must enter a word!") : addTab();
+        contentTab = inputElm.value;
+        if(contentTab.includes(";")) {
+            arrInput = inputElm.value.split(";");
+            arrInput.forEach((elm) => {
+                if(elm.trim() != "") addTab(elm.trim());
+            })
+        }
+        if(contentTab.includes(";") == false) {
+            inputElm.value.trim() == "" ? alert("You must enter a word!") : addTab();
+        }
     }
 }
 let active = function (act) {
