@@ -20,7 +20,7 @@ header {
 }
 .author {
     width: fit-content;
-    margin: 0 auto 24px;
+    margin: 0 auto 16px;
 }
 .control-area {
     display: flex;
