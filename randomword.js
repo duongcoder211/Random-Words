@@ -1,4 +1,4 @@
-import { stringInputExport } from "./dictionaryrandomnew.js";
+import { stringInputExport } from "./dictionaryrandom.js";
 console.log(stringInputExport);
 let clearBtn = document.querySelector("#clear-list-button");
 let randomBtn = document.querySelector("#start-random-button");
