@@ -1,3 +1,5 @@
+import { stringInputExport } from "./dictionaryrandomnew.js";
+console.log(stringInputExport);
 let clearBtn = document.querySelector("#clear-list-button");
 let randomBtn = document.querySelector("#start-random-button");
 let displayBtn = document.querySelector("#visible-list-button");
@@ -10,9 +12,19 @@ let id = 0;
 let isEdit = false;
 let idEdit;
 let currentTab;
+let currentId;
+let index;
 let randomIndex;
 let newRandomIndex;
 let isDisplay = false;
+let isOrigin = true;
+let alertElm = document.querySelector(".alert");
+let closeElm = document.querySelector(".close");
+let contentAlertElm = document.querySelector(".content-alert");
+let contentFrontElm = document.querySelector(".front");
+let contentBackElm = document.querySelector(".back");
+let wordAlert = "";
+let scriptAlert = "";
 const TABS_LIST = "tabList";
 let tabList = []; // mang goc, dung de lay thong tin, du lieu cho code;
 let tab_List = [];
@@ -24,11 +36,12 @@ let getLocalStorage = function () {
     tab_List = JSON.parse(localStorage.getItem(TABS_LIST));
     tabList = tab_List;
 }
-let addTab = function (val) {
+let addTab = function (val,mns) {
     id = id + 1;
-    newTab = {
+    let newTab = {
         id: id,
-        content: val || inputElm.value.trim(),
+        content: val || inputElm.value.split("-")[0],
+        script: mns || "Enter meaning"
     }
     tabList.push(newTab);
     updateLocalStorage();
@@ -42,29 +55,25 @@ let setContent = function () {
     updateLocalStorage();
     isEdit = !isEdit;
 }
-let addOrEditTabs = function () {
-    if (isEdit) {
-        index = Number(tabList.indexOf(currentTab));
-        inputElm.value.trim() == "" ? alert("You must enter a word!") : setContent();
+let alertContent = (word, mean) => {
+    if(isOrigin) {
+        contentAlertElm.style.transform = "rotateY(0deg)";
+        contentFrontElm.style.transform = "rotateY(0deg)";
+        contentBackElm.innerHTML = "";
+        contentFrontElm.innerHTML = word;
     }
     else {
-        contentTab = inputElm.value;
-        if(contentTab.includes(";")) {
-            arrInput = inputElm.value.split(";");
-            arrInput.forEach((elm) => {
-                if(elm.trim() != "") addTab(elm.trim());
-            })
-        }
-        if(contentTab.includes(";") == false) {
-            inputElm.value.trim() == "" ? alert("You must enter a word!") : addTab();
-        }
+        contentAlertElm.style.transform = "rotateY(180deg)";
+        contentBackElm.style.transform = "rotateY(180deg)";
+        contentFrontElm.innerHTML = "";
+        contentBackElm.innerHTML = mean;
     }
 }
 let active = function (act) {
     act.classList.add("active");
 }
 let deActive = function () {
-    activeElm = listAreaElm.querySelector(".active");
+    let activeElm = listAreaElm.querySelector(".active");
     if(activeElm) activeElm.classList.remove("active");
 }
 updateLocalStorage();
@@ -131,6 +140,46 @@ let render = function () {
     });
 
 }
+
+function processInputString (stringInput) {
+        if(stringInput.includes(";")) {
+            let arrInput = inputElm.value.split(";");
+            arrInput.forEach((elm) => {
+                if(elm.trim() != "") { 
+                    let setWord = elm.trim();
+                    if(setWord.includes("-")) {
+                        setWord = setWord.split("-");
+                        addTab(setWord[0].trim(), setWord[1].trim());
+                    }
+                    else addTab(setWord,"")                    
+                }
+            })
+        }
+        if(stringInput.includes(";") == false) {
+            inputElm.value.trim() == "" ? alert("You must enter a word!") : addTab(inputElm.value.split("-")[0],inputElm.value.split("-")[1]);
+        }
+}
+
+let addOrEditTabs = function () {
+    if (isEdit) {
+        index = Number(tabList.indexOf(currentTab));
+        inputElm.value.trim() == "" ? alert("You must enter a word!") : setContent();
+    }
+    else {
+        let contentTab = inputElm.value;
+        processInputString(contentTab);
+    }
+}
+
+
+function loadDictionary () {
+    inputElm.value = stringInputExport;
+    if(stringInputExport) processInputString(inputElm.value);
+    render()
+}
+
+loadDictionary();
+
 clearBtn.onclick = () => {
     isEdit = false;
     tabList = [];
@@ -159,7 +208,12 @@ randomBtn.onclick = () => {
             newRandomIndex = Math.floor((Math.random()/(1/tabList.length)));
         }
         while (newRandomIndex == tabList.length || (randomIndex == newRandomIndex && tabList.length > 1));
-        alert(tabList[newRandomIndex].content);
+        // alert(tabList[newRandomIndex].content);
+        alertElm.style.display = "block";
+        isOrigin = true;
+        alertContent(tabList[newRandomIndex].content,newRandomIndex);
+        wordAlert = tabList[newRandomIndex].content.split("-")[0].trim();
+        scriptAlert = tabList[newRandomIndex].script;
     }
 }
 
@@ -169,4 +223,13 @@ addBtn.onclick = () => {
 
 inputElm.onkeydown = (e) => {
     if(e.key == "Enter") addOrEditTabs();
+}
+
+contentAlertElm.onclick = (e) => {
+    isOrigin = !isOrigin;
+    alertContent(wordAlert,scriptAlert)
+}
+
+closeElm.onclick = () => {
+    alertElm.style.display = "none";  
 }
