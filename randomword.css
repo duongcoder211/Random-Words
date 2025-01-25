@@ -15,8 +15,12 @@ header {
 }
 .name-app {
     width: fit-content;
-    margin: 0 auto 8px;
+    margin: 0 auto;
     font-size: 36px;
+}
+.author {
+    width: fit-content;
+    margin: 0 auto 24px;
 }
 .control-area {
     display: flex;
