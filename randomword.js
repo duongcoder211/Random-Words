@@ -1,10 +1,12 @@
-import { stringInputExport } from "./dictionaryrandom.js";
-console.log(stringInputExport);
+import { stringInputExport } from "./dictionaryrandomrussian.js";
+import { stringExportEng } from "./dictionaryrandomenglish.js";
 let clearBtn = document.querySelector("#clear-list-button");
 let randomBtn = document.querySelector("#start-random-button");
 let displayBtn = document.querySelector("#visible-list-button");
+let changeLanguageBtn = document.querySelector("#change-language-button");
 let inputElm = document.querySelector("#input-word");
 let addBtn = document.querySelector("#add-button");
+let isRussian = true;
 let editTabBtns;
 let deleteTabBtns;
 let listAreaElm = document.querySelector(".list-area");
@@ -35,6 +37,14 @@ let updateLocalStorage = function () {
 let getLocalStorage = function () {
     tab_List = JSON.parse(localStorage.getItem(TABS_LIST));
     tabList = tab_List;
+}
+let clearList = function () {
+    isEdit = false;
+    tabList = [];
+    id = 0;
+    inputElm.value = "";
+    updateLocalStorage();
+    render();
 }
 let addTab = function (val,mns) {
     id = id + 1;
@@ -173,19 +183,24 @@ let addOrEditTabs = function () {
 
 
 function loadDictionary () {
-    inputElm.value = stringInputExport;
-    if(stringInputExport) processInputString(inputElm.value);
+    if(isRussian) {
+        clearList();
+        changeLanguageBtn.src = `./Icons/russia.png`;
+        inputElm.value = stringInputExport;
+    }
+    else if(isRussian == false) {
+        clearList();
+        changeLanguageBtn.src = `./Icons/united-states.png`;
+        inputElm.value = stringExportEng;
+    }
+    if(stringInputExport||stringExportEng) processInputString(inputElm.value);
     render()
 }
 
 loadDictionary();
 
 clearBtn.onclick = () => {
-    isEdit = false;
-    tabList = [];
-    inputElm.value = "";
-    updateLocalStorage();
-    render();
+    clearList();
 }
 
 displayBtn.onclick = () => {
@@ -197,6 +212,16 @@ displayBtn.onclick = () => {
     else {
         listAreaElm.style.display = "block";
         displayBtn.src = "./Icons/visible.png";
+    }
+}
+
+changeLanguageBtn.onclick = () => {
+    isRussian = !isRussian;
+    if(isRussian) {
+        loadDictionary();
+    }
+    else {
+        loadDictionary();
     }
 }
 
