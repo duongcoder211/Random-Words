@@ -112,13 +112,21 @@ header {
     display: none;
 }
 .close {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: -18px;
+    top: -22px;
     right: 6px;
-    width: 16px;
-    height: 16px;
-    background-color: coral;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 96, 38);
+    border: none;
+    border-radius: 2px;
+}
+.close img {
+    width: 80%;
+    height: 80%;
 }
 .content-alert {
     position: absolute;
@@ -130,7 +138,7 @@ header {
     height: 100%;
     background-color: rgb(26, 255, 0);
     background-image: linear-gradient(to left bottom, #ffff, rgb(140, 253, 128), #ffff);
-    transition: 0.5s linear;
+    transition: 0.25s linear;
     border-radius: 6px;
     z-index: 9999;
 }
@@ -138,7 +146,7 @@ header {
     position: absolute;
     width: 90%;
     height: fit-content;
-    transition: 0.5s linear;
+    transition: 0.25s linear;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -146,7 +154,7 @@ header {
     position: absolute;
     width: 90%;
     height: fit-content;
-    transition: 0.5s linear;
+    transition: 0.25s linear;
     overflow: hidden;
     text-overflow: ellipsis;
 }
