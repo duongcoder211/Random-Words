@@ -1,2 +1,10 @@
 export let stringInputExport;
-stringInputExport = `Thẩm phán-Cудья;Tòa án-Суд;Luật sư của tòa án-Адвокат;Tiền boa-Чаевые деньги;Luật học-Юриспруденция;Cải thiện, nâng cao-Улучшать, улучшить;Cuộc thi-Соревнование`;
+stringInputExport = `Thẩm phán-Cудья;Tòa án-Суд;Luật sư của tòa án-Адвокат;Tiền boa-Чаевые деньги;Luật học-Юриспруденция;Cải thiện, nâng cao-Улучшать, улучшить;Cuộc thi-Соревнование;
+Tuổi thọ-Долголетие; Văn phòng du lịch-Экскурсионное бюро; Văn phòng, công ty-Бюро; Hoá đơn-Счёт; Đếm-Подсчёт; Phụ thuộc vào-Зависеть от; Quá trình kiểm tra-Проверка; 
+Trùng nhau-Тождественно равно; Lồng-Клетка; Tấn công- Нападасть, напасть на 4; Ăn thịt, săn mồi-Хищный; Tê giác-Носорог; Trơn tru, trọc, trụi-Гладкий; Xù, bồng, tơi, xốp-Пушистый; 
+Phát triển-Разработать, развивать; Đặt nền móng, đưa ra ý tưởng -Открыть закон;Ba Lan-Польша-Варшама; Đã được giải quyết-Решён (решена,о,ы); Nhãn hiệu, tem thư-Марка (2 морок); 
+Cấu trúc-Структура; Quản lý, điều hành - Управлять 5 НСВ; Tạm thời-Временно; Cần, mục đích để-Предназначать, предназначить; Dài hạn-Дольговременно;Nhanh chóng-Оперативный;
+Đặt, bỏ vào / Thu xếp, sắp xếp-Помещать, помещить; Hiệu xuất-Быстродействие; Tiêu thụ năng lượng-Энергозависимый; Phím-Клавиша; Bàn phím-Клавиатура; Trao đổi-Обмениваться, обменяться 5; 
+Chức năng-Назначение; Biến mất-Исчезать, исчезнуть; Lấy cắp, ăn cắp-Украсть 4; Phát hiện-Обнаружить; Biết rõ-Выяснить; Nhận ra-Оказаться; Nhận ra rằng-Оказалось; 
+Phải, đành phải- 3 приходиться, прийтись; Bất đắc dĩ phải-Пришлось, Cạn lời, hết lời để nói- У 2 нет слов; Cố định, không thay đổi-Постоянный; Bên ngoài-Внешний; Được đề cập đến- Относится к 3;
+Lốp xe, dây tín hiệu-Шина;Nguồn điện-Электропитание; Bên trong-Внутренний; Âm thanh-Акустический; Loa-Колонка`;
