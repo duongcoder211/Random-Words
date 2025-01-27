@@ -7,7 +7,7 @@ Cấu trúc-Структура; Quản lý, điều hành - Управлять 5
 Đặt, bỏ vào/ Thu xếp, sắp xếp-Помещать, помещить; Hiệu xuất-Быстродействие; Tiêu thụ năng lượng-Энергозависимый; Phím-Клавиша; Bàn phím-Клавиатура; Trao đổi-Обмениваться, обменяться 5; 
 Chức năng-Назначение; Biến mất-Исчезать, исчезнуть; Lấy cắp, ăn cắp-Украсть 4; Phát hiện-Обнаружить; Biết rõ-Выяснить; Nhận ra-Оказаться; Nhận ra rằng-Оказалось; 
 Phải, đành phải- 3 приходиться, прийтись; Bất đắc dĩ phải-Пришлось; Cạn lời, hết lời để nói- У 2 нет слов; Cố định, không thay đổi-Постоянный; Bên ngoài-Внешний; Được đề cập đến- Относится к 3;
-Lốp xe, dây tín hiệu-Шина;Nguồn điện-Электропитание; Bên trong-Внутренний; Âm thanh-Акустический; Loa-Колонка;Tiếng gõ-Стук;Chỗ nối, mối nối-Стык;Lưỡi lê-Штык;Có thể, có khả năng-Суметь
+Lốp xe, dây tín hiệu-Шина;Nguồn điện-Электропитание; Bên trong-Внутренний; Âm thanh-Акустический; Loa-Колонка;Tiếng gõ-Стук;Chỗ nối, mối nối-Стык;Lưỡi lê-Штык;Có thể, có khả năng-Суметь;
 Làm ồn, gây ồn-Шуметь;Hề, buồn cười-Шут;Tiếng rít-Шипит;Ổ bánh mì-Сайка;Băng đảng, bọn, lũ/ cái chậu-Шайка;No-Сытый;Đã Khâu-Шитый;Con cú mèo-Сова;Đường may, khâu-Шов;Hư hỏng-Шалить;Phоng cách-Стиль;
 Điềm tĩnh, lặng im-Штиль;Bên trong, bên ngoài cái gì-Внутри, вне 2;Dùng làm gì/ làm việc ở/ dùng để-Служить чем/ где/ для чего;Đeo, mặc vào đâu-Надевать, надеть куда;Đồ hoạ-Графический;
 Biểu tượng-Символьный;Thẻ nhớ-Карта памяти;Đen trắng-Чёрно белый;Có màu-Цветной;Giấy (tt)-Бумажный;Khả năng-Способность;Inch-Дюйм;Có khả năng-Способный;Nhận ra-Разпознавать,разпознать
