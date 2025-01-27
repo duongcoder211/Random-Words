@@ -22,6 +22,8 @@ let isDisplay = false;
 let isOrigin = true;
 let alertElm = document.querySelector(".alert");
 let closeElm = document.querySelector(".close");
+let previosElm = document.querySelector(".previous");
+let nextElm = document.querySelector(".next");
 let contentAlertElm = document.querySelector(".content-alert");
 let contentFrontElm = document.querySelector(".front");
 let contentBackElm = document.querySelector(".back");
@@ -233,15 +235,27 @@ randomBtn.onclick = () => {
             newRandomIndex = Math.floor((Math.random()/(1/tabList.length)));
         }
         while (newRandomIndex == tabList.length || (randomIndex == newRandomIndex && tabList.length > 1));
-        // alert(tabList[newRandomIndex].content);
         alertElm.style.display = "block";
         isOrigin = true;
-        alertContent(tabList[newRandomIndex].content,newRandomIndex);
+        alertContent(tabList[newRandomIndex].content,tabList[newRandomIndex].script);
         wordAlert = tabList[newRandomIndex].content.split("-")[0].trim();
         scriptAlert = tabList[newRandomIndex].script;
     }
 }
-
+previosElm.onclick = () => {
+    newRandomIndex == 0? newRandomIndex = tabList.length - 1 : newRandomIndex -= 1;
+    isOrigin = true;
+    alertContent(tabList[newRandomIndex].content,tabList[newRandomIndex].script);
+    wordAlert = tabList[newRandomIndex].content.split("-")[0].trim();
+    scriptAlert = tabList[newRandomIndex].script;
+}
+nextElm.onclick = () => {
+    newRandomIndex == (tabList.length - 1)? newRandomIndex = 0 : newRandomIndex += 1;
+    isOrigin = true;
+    alertContent(tabList[newRandomIndex].content,tabList[newRandomIndex].script);
+    wordAlert = tabList[newRandomIndex].content.split("-")[0].trim();
+    scriptAlert = tabList[newRandomIndex].script;
+}
 addBtn.onclick = () => {
     addOrEditTabs();
 }
