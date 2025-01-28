@@ -1,9 +1,9 @@
 * {
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 header {
-    user-select: none;
     position: sticky;
     padding: 20px 0 10px;
     top: 0;
@@ -109,7 +109,6 @@ header {
     top: 28%;
     font-size: 20px;
     margin-top: 50px;
-    user-select: none;
     display: none;
 }
 .close {
