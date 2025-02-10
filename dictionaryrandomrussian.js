@@ -1,5 +1,5 @@
 export let stringInputExport;
-stringInputExport = `Cải thiện, nâng cao-Улучшать, улучшить;Cuộc thi-Соревнование;
+stringInputExport = `Mejorar-Улучшать, улучшить;Cuộc thi-Соревнование;
 Tuổi thọ-Долголетие; Văn phòng du lịch-Экскурсионное бюро; Văn phòng, công ty-Бюро; Hoá đơn, tài khoản-Счёт; Đếm-Подсчёт; Phụ thuộc vào-Зависеть от 2; Quá trình kiểm tra-Проверка; 
 Trùng nhau-Тождественно равно; Lồng-Клетка; Tấn công- Нападасть, напасть на 4; Ăn thịt, săn mồi-Хищный; Tê giác-Носорог; Trơn tru, trọc, trụi-Гладкий; Xù, bồng, tơi, xốp-Пушистый; 
 Phát triển-Разработать, развивать; Đặt nền móng, đưa ra ý tưởng -Открыть закон;Ba Lan-Польша-Варшама; Đã được giải quyết-Решён (решена,о,ы); Nhãn hiệu, tem thư-Марка (2 морок); 
